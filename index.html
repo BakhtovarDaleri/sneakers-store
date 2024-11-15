@@ -14,6 +14,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
   </head>
   <body>
     <section>
@@ -31,10 +32,16 @@
         </ul>
 
         <div class="icons">
-          <i class="fa-solid fa-heart"></i>
-          <i class="fa-solid fa-cart-shopping"></i>
-          <i class="fa-solid fa-user"></i>
+          <i class="fa-solid fa-heart"><span id="favorites-count">0</span></i>
+          <i class="fa-solid fa-cart-shopping"><span id="cart-count">0</span></i>
+          
         </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       </nav>
 
       <div class="main" id="Home">
@@ -544,27 +551,31 @@
       <div class="right">
         <h1>Добро пожаловать!</h1>
 
-        <form action="#" method="post">
-          <p>Имя пользователя</p>
+        <form action="#" method="post" id="msg-form">
+          <p>Ваше имя</p>
           <div class="user">
             <i class="fa-solid fa-user"></i>
             <input
+            id="name"
               type="text"
-              name="user"
-              placeholder="Имя пользователя"
+              placeholder="Ваше имя"
               class="username"
             />
           </div>
 
-          <p class="passworg_tag">Пароль</p>
-          <div class="password">
-            <i class="fa-solid fa-lock"></i>
-            <input type="text" name="password" placeholder="Пароль" />
+          <p class="email_tag">Почта</p>
+          <div class="email">
+            <i class="fa-solid fa-envelope"></i>
+            <input id="email" type="email"  placeholder="Почта" />
           </div>
 
-          <p class="forget">Забыли пароль ?</p>
+          <p class="tel-number">Ваш телефон</p>
+          <div class="phone">
+            <i class="fa-solid fa-phone"></i>
+            <input id="tel-number" type="tel"  placeholder="Ваш телефон" />
+          </div>
 
-          <button type="submit">Войти</button>
+          <button type="submit">Отправить</button>
           <div class="loging_icon">
             <a href="#"><img src="image/google.png" /></a>
             <a href="#"><img src="image/facebook.png" /></a>
@@ -581,9 +592,9 @@
       <div class="footer_main">
         <div class="tag">
           <h1>Контакты</h1>
-          <a href="#"><i class="fa-solid fa-house"></i>123/Коломбо/Шри-Ланка</a>
-          <a href="#"><i class="fa-solid fa-phone"></i>+94 12 345 6789</a>
-          <a href="#"><i class="fa-solid fa-envelope"></i>contact@gmail.com</a>
+          <a href="#"><i class="fa-solid fa-house"></i>123/Россия/Москва</a>
+          <a href="#"><i class="fa-solid fa-phone"></i>+7 495 546 54 28</a>
+          <a href="#"><i class="fa-solid fa-envelope"></i>contact@mail.ru</a>
         </div>
 
         <div class="tag">
@@ -596,26 +607,26 @@
 
         <div class="tag">
           <h1>Наши магазины</h1>
-          <a href="#" class="center">Шри-Ланка</a>
-          <a href="#" class="center">США</a>
-          <a href="#" class="center">Индия</a>
-          <a href="#" class="center">Япония</a>
+          <a href="#" class="center">Москва</a>
+          <a href="#" class="center">Санкт-Петербург</a>
+          <a href="#" class="center">Сочи</a>
+          <a href="#" class="center">Казань</a>
         </div>
 
         <div class="tag">
           <h1>Мы в соцсетях</h1>
           <div class="social_link">
             <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-telegram"></i></i></a>
             <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></i></a>
           </div>
         </div>
 
         <div class="tag">
           <h1>Подписка на новости</h1>
           <div class="search_bar">
-            <input type="text" placeholder="Ваш email здесь" />
+            <input id="email" type="email" placeholder="Ваш email здесь" />
             <button type="submit">Подписаться</button>
           </div>
         </div>
